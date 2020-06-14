@@ -18,7 +18,7 @@ pipeline {
          }
       }
       stage('Python') {
-        steps {if ($Language == 'all'){
+        steps {if (${Language} == 'all'){
             echo 'python code'
         }else {echo "bye"
                brack 
