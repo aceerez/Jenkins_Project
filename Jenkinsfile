@@ -10,7 +10,7 @@ pipeline {
       }
      stage('Selected language') {
          steps {
-            echo "You choose to code in ${Language}
+            echo "You choose to code in ${Language}"
          }
       }
       stage('Build') {
@@ -18,9 +18,12 @@ pipeline {
          }
       }
       stage('Python') {
-        steps {
+        steps {if ($Language == 'all' or  $Language == 'Python'){
             echo 'python code'
-       }
+        }else {echo "bye"
+               brack 
+              }
+         }
       }
       stage('C') {
          steps {
@@ -45,4 +48,3 @@ pipeline {
       
    }
 }
-
