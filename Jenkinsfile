@@ -1,5 +1,6 @@
   
 pipeline {
+  Name = "asaf"
   agent { node { label 'slave01' } }
 
    stages {
@@ -16,9 +17,9 @@ pipeline {
      
     
      stage ('Test') {
-        when { ${Language} 'All' }
+        when { $Name 'asaf' }
           steps { 
-        echo 'I only execute on the All branch.' 
+        echo 'I only execute on the asaf h.' 
     }
 }
       stage('Python') {
