@@ -15,10 +15,10 @@ pipeline {
       }
      
     
-     stage ('Test 3: Master') {
-        when { branch 'master' }
+     stage ('Test') {
+        when { ${Language} 'All' }
           steps { 
-        echo 'I only execute on the master branch.' 
+        echo 'I only execute on the All branch.' 
     }
 }
       stage('Python') {
