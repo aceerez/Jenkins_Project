@@ -8,25 +8,41 @@ pipeline {
           checkout scm
         } 
       }
+     stage('Selected language') {
+         steps {
+            echo "You choose to code in ${Language}
+         }
+      }
       stage('Build') {
          steps {
-            echo 'Build process..'
-            sh 'echo "My first pipeline"'
-            sh '''
-                echo "By the way, I can do more stuff in here"
-                ls -la ~
-                '''
-           echo "code is ${Language}"
          }
       }
-      stage('Test') {
-         steps {
-            echo 'Test process..'
+      stage('Python') {
+        steps {if ($Language == 'all' or  $Language == 'Python'){
+            echo 'python code'
+        }else {echo "bye"
+               brack 
+              }
          }
       }
-      stage('Deploy') {
+      stage('C') {
          steps {
-            echo 'Deploy process..'
+            echo 'C code'
+         }
+      }
+      stage('Bash') {
+         steps {
+            echo 'Bash code'
+         }
+      }
+      stage('Java') {
+         steps {
+            echo 'Java code'
+         }
+      }
+      stage('C#') {
+         steps {
+            echo 'C# code'
          }
       }
       
