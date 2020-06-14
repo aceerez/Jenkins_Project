@@ -15,8 +15,8 @@ pipeline {
             sh '''
                 echo "By the way, I can do more stuff in here"
                 ls -la ~
-                echo "code is #Language"
-            '''
+                '''
+           echo "code is ${Language}"
          }
       }
       stage('Test') {
