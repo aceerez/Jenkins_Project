@@ -13,20 +13,18 @@ pipeline {
             echo "You choose to code in ${Language}"
          }
       }
-      stage('Build') {
-         steps {
-           echo "build"
-         }
-      }
+     
+    
+     stage ('Test 3: Master') {
+        when { branch 'master' }
+          steps { 
+        echo 'I only execute on the master branch.' 
+    }
+}
       stage('Python') {
         steps { 
-           script {
-            if (${Language} == 'all'){
-                echo 'python code'
-        }
-             else {echo "bye"
-             }
-         }
+          echo 'C code'
+                    }
       }
       stage('C') {
          steps {
