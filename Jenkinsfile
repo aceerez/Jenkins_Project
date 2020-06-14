@@ -15,6 +15,7 @@ pipeline {
       }
       stage('Build') {
          steps {
+           echo "build"
          }
       }
       stage('Python') {
@@ -24,8 +25,7 @@ pipeline {
                 echo 'python code'
         }
              else {echo "bye"
-               brack 
-              }
+             }
          }
       }
       stage('C') {
