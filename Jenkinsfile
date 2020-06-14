@@ -1,6 +1,6 @@
   
 pipeline {
-  Name = "asaf"
+  
   agent { node { label 'slave01' } }
 
    stages {
@@ -16,10 +16,12 @@ pipeline {
       }
      
     
-     stage ('Test') {
-        when { $Name 'asaf' }
-          steps { 
-        echo 'I only execute on the asaf h.' 
+       stage('Example') {
+        if (env.BRANCH_NAME == 'master') {
+            echo 'I only execute on the master branch'
+        } else {
+            echo 'I execute elsewhere'
+        }
     }
 }
       stage('Python') {
