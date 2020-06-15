@@ -40,7 +40,7 @@ pipeline {
          steps {
              sh ''' echo "running python3 code" 
               cd ${WORKSPACE}/scripts
-              gcc C_script -o runC.exe
+              gcc C_script.c -o runC.exe
 	      ./runC.exe
 	      '''
          }
