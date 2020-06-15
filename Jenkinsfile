@@ -18,7 +18,7 @@ pipeline {
 			   echo 'Build process..' 
 			   sh '''
 			   cd ${WORKSPACE}/scripts/
-			   chmod 755 *.sh
+			   chmod 755 ./
 			   '''
 		   }
 	   }      
