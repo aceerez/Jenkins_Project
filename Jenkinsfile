@@ -19,9 +19,7 @@ pipeline {
 	   steps {
             echo 'python code'
         }
-		else {echo "bye"
-            
-			}
+		 
          }
       
       stage('C') {
