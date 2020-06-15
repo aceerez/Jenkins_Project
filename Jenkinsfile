@@ -12,22 +12,22 @@ pipeline {
             echo "You choose to code in ${Language}"
          }
       }
-      
+	  
+	   stage('Build') {
+		   steps {
+			   echo 'Build process..' 
+			   sh '''
+			   cd ${WORKSPACE}/scripts/
+			   chmod 755 *.sh
+			   '''
+		   }
+	   }      
 	  stage('Python') {
        when { expression {return (params.Language == 'Python' || params.Language == 'All') }
 	   }
 	   steps {
-            ''' sh python3
-	    
-	    
-	    
-	    import random
-			print("this is the winning LOTTORY numbers ")
-			for x in range(6):
-			    print(random.randint(1,36))
-	    '''
-		   
-        }
+		    echo 'C code'
+	   }
 		 
          }
       
@@ -42,7 +42,10 @@ pipeline {
 	      when { expression {return (params.Language == 'Bash' || params.Language == 'All') }
 	   }
          steps {
-            echo 'Bash code'
+            sh ''' echo "running bash code" 
+              cd ${WORKSPACE}/scripts
+              ./bash_script.sh 
+	      '''
          }
       }
       stage('Java') {
