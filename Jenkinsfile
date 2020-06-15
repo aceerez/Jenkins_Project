@@ -1,6 +1,4 @@
-  
 pipeline {
-  
   agent { node { label 'slave01' } }
 
    stages {
@@ -14,21 +12,18 @@ pipeline {
             echo "You choose to code in ${Language}"
          }
       }
-     
-    
-       stage('Example') {
-         if ("${Language}" == 'all') {
-            echo 'I only execute on the master branch'
-        } else {
-            echo 'I execute elsewhere'
+      
+	  stage('Python') {
+       when { expression { params.Language == 'Python' }
+	   }
+	   steps {
+            echo 'python code'
         }
-    }
-}
-      stage('Python') {
-        steps { 
-          echo 'C code'
-                    }
-      }
+		else {echo "bye"
+            
+			}
+         }
+      
       stage('C') {
          steps {
             echo 'C code'
@@ -52,3 +47,4 @@ pipeline {
       
    }
 
+}
