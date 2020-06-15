@@ -38,8 +38,8 @@ pipeline {
 	      when { expression {return (params.Language == 'C' || params.Language == 'All') }
 	   }
          steps {
-             sh ''' echo "running python3 code" 
-              cd ${WORKSPACE}/scripts
+             sh ''' echo "running C code\n printing the ABC:\n"
+	     cd ${WORKSPACE}/scripts
               gcc C_script.c -o runC.exe
 	      ./runC.exe
 	      '''
