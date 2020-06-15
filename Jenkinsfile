@@ -26,7 +26,10 @@ pipeline {
        when { expression {return (params.Language == 'Python' || params.Language == 'All') }
 	   }
 	   steps {
-		    echo 'C code'
+		    sh ''' echo "running python3 code" 
+              cd ${WORKSPACE}/scripts
+              ./paython_script.sh 
+	      '''
 	   }
 		 
          }
