@@ -28,7 +28,7 @@ pipeline {
 	   steps {
 		    sh ''' echo "running python3 code" 
               cd ${WORKSPACE}/scripts
-              ./paython_script.sh 
+              ./paython_script.py 
 	      '''
 	   }
 		 
