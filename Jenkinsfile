@@ -23,21 +23,29 @@ pipeline {
          }
       
       stage('C') {
+	      when { expression {return (params.Language == 'C' || params.Language == 'All') }
+	   }
          steps {
             echo 'C code'
          }
       }
       stage('Bash') {
+	      when { expression {return (params.Language == 'Bash' || params.Language == 'All') }
+	   }
          steps {
             echo 'Bash code'
          }
       }
       stage('Java') {
+	      when { expression {return (params.Language == 'Java' || params.Language == 'All') }
+	   }
          steps {
             echo 'Java code'
          }
       }
       stage('C#') {
+	      when { expression {return (params.Language == 'C#' || params.Language == 'All') }
+	   }
          steps {
             echo 'C# code'
          }
