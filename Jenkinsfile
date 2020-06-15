@@ -14,7 +14,7 @@ pipeline {
       }
       
 	  stage('Python') {
-       when { expression { (params.Language == 'Python') or (params.Language == 'All') }
+       when { expression { params.Language == 'Python' || params.Language == 'All' }
 	   }
 	   steps {
             echo 'python code'
