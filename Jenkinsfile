@@ -13,9 +13,9 @@ pipeline {
          }
       }
 	  
-	   stage('Build') {
+	   stage('assigning permissions !') {
 		   steps {
-			   echo 'Build process..' 
+			   echo 'permissions process..' 
 			   sh '''
 			   cd ${WORKSPACE}/scripts/
 			   chmod -R 755 ./
@@ -76,7 +76,7 @@ pipeline {
          steps {
             sh ''' echo "running Ruby code" 
               cd ${WORKSPACE}/scripts
-              ./ruby ruby_script.rb
+               ruby ruby_script.rb
 	      '''
          }
       }
