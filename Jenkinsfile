@@ -58,9 +58,12 @@ pipeline {
       stage('Java') {
 	      when { expression {return (params.Language == 'Java' || params.Language == 'All') }
 	   }
-	      agent { docker { image 'node:6.3' } }
 	      steps {
-		      sh 'npm --version'
+		      sh ''' echo "running java code" 
+              cd ${WORKSPACE}/scripts
+              javac Fibonacci.java
+	      java Fibonacci	      
+	     '''
             }
         }
     
