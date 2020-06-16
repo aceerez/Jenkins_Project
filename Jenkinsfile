@@ -70,11 +70,14 @@ pipeline {
 
 
       
-      stage('C#') {
-	      when { expression {return (params.Language == 'C#' || params.Language == 'All') }
+      stage('Ruby') {
+	      when { expression {return (params.Language == 'Ruby' || params.Language == 'All') }
 	   }
          steps {
-            echo 'C# code'
+            sh ''' echo "running Ruby code" 
+              cd ${WORKSPACE}/scripts
+              ./ ruby ruby_script.rb
+	      '''
          }
       }
       
