@@ -80,7 +80,23 @@ pipeline {
 	      '''
          }
       }
-      
+      stage('Crating Log file') {
+         steps {
+            echo 'Crating Log file...'
+            sh '''
+	      log_file="${HOME}/Documents/Deployment/report"
+              mkdir -p ${HOME}/Documents/jenkins_log_files/              
+              if [ -f "${log_file}" ]; then
+                echo "file ${log_file} exists"
+              else
+	              touch ${log_file}
+              fi              
+              echo "Build Number $BUILD_NUMBER" >> ${log_file}
+              cat ${WORKSPACE}/scripts/results >> ${log_file}
+	      echo "#############################" >> ${log_file}
+             '''
+         }
+      }
    }
 
 }
