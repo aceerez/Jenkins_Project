@@ -58,10 +58,15 @@ pipeline {
       stage('Java') {
 	      when { expression {return (params.Language == 'Java' || params.Language == 'All') }
 	   }
-         steps {
-            echo 'Java code'
-         }
-      }
+	      agent { docker { image 'node:6.3' } }
+	      steps {
+		      sh 'npm --version'
+            }
+        }
+    
+
+
+      
       stage('C#') {
 	      when { expression {return (params.Language == 'C#' || params.Language == 'All') }
 	   }
