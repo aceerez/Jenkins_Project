@@ -76,7 +76,7 @@ pipeline {
          steps {
             sh ''' echo "running Ruby code" 
               cd ${WORKSPACE}/scripts
-              ./ ruby ruby_script.rb
+              ./ruby ruby_script.rb
 	      '''
          }
       }
