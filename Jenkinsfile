@@ -92,7 +92,7 @@ pipeline {
 	              touch ${log_file}
               fi              
               echo "Build Number $BUILD_NUMBER" >> ${log_file}
-              cat ${WORKSPACE}/Logs >> ${log_file}
+              cat ${WORKSPACE}/Logs/log_file >> ${log_file}
 	      echo "#############################" >> ${log_file}
              '''
          }
