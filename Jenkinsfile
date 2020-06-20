@@ -84,14 +84,8 @@ pipeline {
          steps {
             echo 'Crating Log file...'
             sh '''
-	    if [ -d "${HOME}/Documents/jenkins_log_files/" ] 
-		then
-		    echo "Directory exists." 
-		else
-		   mkdir -p ${HOME}/Documents/jenkins_log_files/ 
-		fi
-	      log_file="${HOME}/Documents/jenkins_log_files/log_file"
-                           
+	    log_file="${HOME}/Documents/jenkins_log_files/log"
+                                       
               if [ -f "${log_file}" ]; then
                 echo "file ${log_file} exists"
               else
