@@ -84,7 +84,7 @@ pipeline {
          steps {
             echo 'Crating Log file...'
             sh '''
-	    log_file="${HOME}/Documents/jenkins_log_files/log"
+	    
                                        
               if [ -f "${log_file}" ]; then
                 echo "file ${log_file} exists"
