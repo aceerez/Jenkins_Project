@@ -80,22 +80,7 @@ pipeline {
 	      '''
          }
       }
-      stage('Crating Log file') {
-         steps {
-            echo 'Saving Results process..'
-            sh '''
-	                    
-              if [ -f "${report_file}" ]; then
-                echo "file ${report_file} exists"
-              else
-	              touch ${report_file}
-              fi              
-              echo "Build Number $BUILD_NUMBER" >> ${report_file}
-              cat ${WORKSPACE}/scripts/results >> ${report_file}
-	      echo "#############################" >> ${report_file}
-            '''
-         }
-      }
+      
    }
 
 }
