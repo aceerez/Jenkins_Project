@@ -83,7 +83,7 @@ pipeline {
 	      stage('Saving Log') {
          steps {
 		 echo 'Saving LOG Results ..'
-		 def lng = ${Language}
+		 string lng = "${Language}"
 		 sh '''
 		      log_file="${HOME}/Documents/logs/logFile.txt"
 		      mkdir -p ${HOME}/Documents/logs/              
