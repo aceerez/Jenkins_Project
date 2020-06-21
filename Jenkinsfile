@@ -83,7 +83,6 @@ pipeline {
 	      stage('Saving Log') {
          steps {
 		 echo 'Saving LOG Results ..'
-		 string lng = "${Language}"
 		 sh '''
 		      log_file="${HOME}/Documents/logs/logFile.txt"
 		      mkdir -p ${HOME}/Documents/logs/              
@@ -94,7 +93,6 @@ pipeline {
 		      fi  
 		      echo "Build start at $(date) " >> ${log_file}
 		      echo "Build Number $BUILD_NUMBER" >> ${log_file}		      
-		      echo "Selected language is "${lng}"" >> ${log_file}
 		      echo "#############################" >> ${log_file}
             '''
          }
