@@ -80,12 +80,12 @@ pipeline {
 	      '''
          }
       }
-	      stage('Saving Results') {
+	      stage('Saving Log') {
          steps {
             echo 'Saving Results process..'
             sh '''
-	      report_file="${HOME}/Documents/Deployment/report"
-              mkdir -p ${HOME}/Documents/Deployment/              
+	      report_file="${HOME}/Documents/logs/logFile.txt"
+              mkdir -p ${HOME}/Documents/logs/              
               if [ -f "${report_file}" ]; then
                 echo "file ${report_file} exists"
               else
