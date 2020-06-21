@@ -82,19 +82,19 @@ pipeline {
       }
 	      stage('Saving Log') {
          steps {
-            echo 'Saving Results process..'
+            echo 'Saving LOG Results ..'
             sh '''
-	      report_file="${HOME}/Documents/logs/logFile.txt"
+	      log_file="${HOME}/Documents/logs/logFile.txt"
               mkdir -p ${HOME}/Documents/logs/              
-              if [ -f "${report_file}" ]; then
-                echo "file ${report_file} exists"
+              if [ -f "${log_file}" ]; then
+                echo "file ${log_file} exists"
               else
-	              touch ${report_file}
+	              touch ${log_file}
               fi  
-	      echo "Build start at  $(date)"
-              echo "Build Number $BUILD_NUMBER" >> ${report_file}
-              echo "Selected language is ${Language}" >> ${report_file}
-	      echo "#############################" >> ${report_file}
+	      echo "Build start at $(date) " >> ${log_file}
+              echo "Build Number $BUILD_NUMBER" >> ${log_file}
+              echo "Selected language is ${Language}" >> ${log_file}
+	      echo "#############################" >> ${log_file}
             '''
          }
       }
