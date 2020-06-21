@@ -90,9 +90,10 @@ pipeline {
                 echo "file ${report_file} exists"
               else
 	              touch ${report_file}
-              fi              
+              fi  
+	      echo "Build start at  $(date)"
               echo "Build Number $BUILD_NUMBER" >> ${report_file}
-              
+              echo "Selected language is ${Language}" >> ${report_file}
 	      echo "#############################" >> ${report_file}
             '''
          }
