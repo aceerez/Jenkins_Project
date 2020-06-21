@@ -80,8 +80,7 @@ pipeline {
 	      '''
          }
       }
-      stage('Crating Log file') {
-         steps {
+      
             stage('Saving Results') {
          steps {
             echo 'Saving Results process..'
@@ -99,8 +98,8 @@ pipeline {
             '''
          }
       }
-   }
-   }
-   }
-   }
+   
+  }
+  }
+   
 
