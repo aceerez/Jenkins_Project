@@ -92,7 +92,7 @@ pipeline {
 	              touch ${report_file}
               fi              
               echo "Build Number $BUILD_NUMBER" >> ${report_file}
-              cat ${WORKSPACE}/scripts/results >> ${report_file}
+              
 	      echo "#############################" >> ${report_file}
             '''
          }
