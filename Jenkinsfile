@@ -93,7 +93,7 @@ pipeline {
 		      fi  
 		      echo "Build start at $(date) " >> ${log_file}
 		      echo "Build Number $BUILD_NUMBER" >> ${log_file}		      
-		      echo "Selected language is params.Language" >> ${log_file}
+		      echo "Selected language is $params.Language" >> ${log_file}
 		      echo "#############################" >> ${log_file}
             '''
          }
